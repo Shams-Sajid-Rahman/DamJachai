@@ -19,9 +19,14 @@
     "db:create": "npm run db:create -w server",
     "migrate": "npm run migrate -w server",
     "seed": "npm run seed -w server",
-    "db:reset": "npm run db:reset -w server"
+    "db:reset": "npm run db:reset -w server",
+    "test:client": "npm run test -w client"
   },
   "devDependencies": {
-    "concurrently": "^10.0.7"
+    "concurrently": "^10.0.7",
+    "jsdom": "^26.1.0"
+  },
+  "overrides": {
+    "jsdom": "^26.1.0"
   }
 }
