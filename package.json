@@ -1,0 +1,23 @@
+{
+  "name": "damjachai",
+  "private": true,
+  "version": "0.0.0",
+  "description": "DamJachai (দাম যাচাই) - compare diagnostic test prices across labs in Bangladesh",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
