@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom/vitest';
 import { afterEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
+
+// Lazy page chunks can take a moment to load when every test file runs in parallel.
+configure({ asyncUtilTimeout: 4000 });
 
 afterEach(() => cleanup());
 

@@ -28,7 +28,7 @@ export default function RegisterPage() {
   const [formError, setFormError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  usePageMeta({ title: t('auth.registerTitle') });
+  usePageMeta({ title: t('auth.registerTitle'), noindex: true });
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 

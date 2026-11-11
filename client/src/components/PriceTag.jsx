@@ -17,7 +17,7 @@ export function PriceTag({ price, discountedPrice, size = 'md', highlight = fals
         {formatPrice(effective, lang)}
       </span>
       {hasDiscount && (
-        <span className="text-sm text-slate-400 line-through" aria-label={t('price.original', { price: formatPrice(price, lang) })}>
+        <span className="text-sm text-slate-500 line-through" aria-label={t('price.original', { price: formatPrice(price, lang) })}>
           {formatPrice(price, lang)}
         </span>
       )}

@@ -51,7 +51,7 @@ function UserMenu({ dark }) {
           dark ? 'text-white hover:bg-white/10' : 'text-navy hover:bg-slate-100',
         )}
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{initials}</span>
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-dark text-xs font-bold text-white">{initials}</span>
         <span className="max-w-[8rem] truncate">{user.name.split(' ')[0]}</span>
         <Icon name="chevronDown" className="h-4 w-4" />
       </button>

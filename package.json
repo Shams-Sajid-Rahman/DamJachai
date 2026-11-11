@@ -20,7 +20,9 @@
     "migrate": "npm run migrate -w server",
     "seed": "npm run seed -w server",
     "db:reset": "npm run db:reset -w server",
-    "test:client": "npm run test -w client"
+    "test:client": "npm run test -w client",
+    "test:server": "npm run test -w server",
+    "test": "npm run test -w server && npm run test -w client"
   },
   "devDependencies": {
     "concurrently": "^10.0.7",

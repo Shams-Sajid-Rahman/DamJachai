@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [formError, setFormError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  usePageMeta({ title: t('auth.loginTitle') });
+  usePageMeta({ title: t('auth.loginTitle'), noindex: true });
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 

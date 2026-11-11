@@ -49,7 +49,7 @@ function LabTotal({ result, tests, rank, cheapestTotal }) {
           <p className="text-xs text-slate-500">{t('basket.total')}</p>
           <p className={cn('text-3xl font-bold tabular-nums', isBest ? 'text-coral-ink' : 'text-navy')}>{formatPrice(result.total, lang)}</p>
           {result.totalBeforeDiscount > result.total && (
-            <p className="text-xs text-slate-400 line-through">{formatPrice(result.totalBeforeDiscount, lang)}</p>
+            <p className="text-xs text-slate-500 line-through">{formatPrice(result.totalBeforeDiscount, lang)}</p>
           )}
           {isBest ? (
             <Badge variant="coral" icon="tag" className="mt-1">{t('basket.bestDeal')}</Badge>

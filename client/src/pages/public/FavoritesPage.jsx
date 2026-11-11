@@ -11,7 +11,7 @@ import { FavoriteButton } from '../../components/FavoriteButton.jsx';
 export default function FavoritesPage() {
   const { t } = useLang();
   const { data, isPending, isError, refetch } = useFavorites();
-  usePageMeta({ title: t('pages.favorites.title') });
+  usePageMeta({ title: t('pages.favorites.title'), noindex: true });
 
   return (
     <>

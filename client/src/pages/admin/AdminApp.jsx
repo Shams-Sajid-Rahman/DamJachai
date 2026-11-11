@@ -13,7 +13,7 @@ import NotFoundPage from '../NotFoundPage.jsx';
 /** The admin panel. The router only mounts it for admins (RequireAdmin), and every API call is also checked on the server. */
 export default function AdminApp() {
   const { t } = useLang();
-  usePageMeta({ title: t('admin.title') });
+  usePageMeta({ title: t('admin.title'), noindex: true });
 
   return (
     <Routes>

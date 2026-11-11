@@ -61,7 +61,7 @@ export default function ReportPricePage() {
   const [formError, setFormError] = useState('');
   const [done, setDone] = useState(null);
 
-  usePageMeta({ title: t('pages.reportPrice.title') });
+  usePageMeta({ title: t('pages.reportPrice.title'), noindex: true });
 
   const labs = useQuery({ queryKey: ['labs', 'all-for-select'], queryFn: () => publicApi.listLabs({ limit: 100, sort: 'name' }) });
   const testSlug = params.get('test');

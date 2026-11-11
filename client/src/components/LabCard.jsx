@@ -36,11 +36,11 @@ export function LabCard({ lab, action }) {
     <article className="relative flex flex-col gap-3 rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-lg">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h3 className="truncate text-lg font-semibold text-navy">
+          <h2 className="truncate text-lg font-semibold text-navy">
             <Link to={`/labs/${lab.slug}`} className="after:absolute after:inset-0">
               {lab.name}
             </Link>
-          </h3>
+          </h2>
           <LabLocation lab={lab} />
         </div>
         {action && <div className="relative z-10 shrink-0">{action}</div>}
