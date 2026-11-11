@@ -111,7 +111,7 @@ export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, p
         <button
           type="submit"
           className={cn(
-            'absolute right-2 top-1/2 -translate-y-1/2 rounded-xl bg-coral font-semibold text-white shadow-sm transition hover:bg-coral-dark',
+            'absolute right-2 top-1/2 -translate-y-1/2 rounded-xl bg-coral font-semibold text-navy shadow-sm transition hover:bg-[#ff8270]',
             large ? 'h-12 px-6 text-base' : 'h-9 px-4 text-sm',
           )}
         >

@@ -11,7 +11,7 @@ export function LanguageToggle({ className = '' }) {
     <button
       type="button"
       onClick={() => i18n.changeLanguage(next)}
-      aria-label={t('language.switchLabel')}
+      title={t('language.switchLabel')}
       className={cn(
         'inline-flex items-center gap-1.5 rounded-full border border-primary/40 px-3 py-1.5 text-sm font-medium text-primary-dark transition hover:bg-primary/10',
         className,

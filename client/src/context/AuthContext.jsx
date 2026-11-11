@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { onSessionChange, refreshSession, setSession } from '../lib/api.js';
+import { hasSessionHint, onSessionChange, refreshSession, setSession } from '../lib/api.js';
 import { loginRequest, logoutRequest, registerRequest } from '../lib/authApi.js';
 
 const AuthContext = createContext(null);
@@ -18,7 +18,9 @@ export function AuthProvider({ children }) {
     });
 
     // Bring the session back after a page reload through the httpOnly refresh cookie.
-    refreshSession().catch(() => setStatus('guest'));
+    // Skip the call for visitors who never logged in on this browser.
+    if (hasSessionHint()) refreshSession().catch(() => setStatus('guest'));
+    else setStatus('guest');
 
     return unsubscribe;
   }, []);

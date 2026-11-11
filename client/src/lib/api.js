@@ -27,7 +27,29 @@ export function onSessionChange(listener) {
   return () => sessionListeners.delete(listener);
 }
 
+// A non-secret hint that this browser had a session. It only decides whether a refresh call is worth trying,
+// so anonymous visitors do not send a request (and get a 401) on every page load. The real token stays in the httpOnly cookie.
+const SESSION_HINT_KEY = 'damjachai_has_session';
+
+export function hasSessionHint() {
+  try {
+    return localStorage.getItem(SESSION_HINT_KEY) === '1';
+  } catch {
+    return true; // storage blocked: just try the refresh
+  }
+}
+
+function setSessionHint(on) {
+  try {
+    if (on) localStorage.setItem(SESSION_HINT_KEY, '1');
+    else localStorage.removeItem(SESSION_HINT_KEY);
+  } catch {
+    // ignore
+  }
+}
+
 function emitSession(session) {
+  setSessionHint(!!session);
   sessionListeners.forEach((listener) => listener(session));
 }
 
