@@ -79,3 +79,12 @@ export function respond(method, url) {
   if (path === '/health') return { status: 'ok', database: 'ok' };
   return undefined;
 }
+
+export const adminDashboard = {
+  totals: { activeLabs: 12, hiddenLabs: 0, activeTests: 40, hiddenTests: 0, prices: 388, stalePrices: 81, users: 7, newUsersWeek: 1, pendingReviews: 4, pendingReports: 3, cities: 2, categories: 8 },
+  staleDays: 90,
+  recentPrices: [{ id: 1, price: 400, discountedPrice: null, updatedAt: '2026-11-10T00:00:00.000Z', lastVerifiedAt: '2026-11-10T00:00:00.000Z', source: 'admin', lab: { name: 'Sample Lab 1', slug: 'sample-lab-1' }, test: { nameEn: 'CBC', nameBn: 'সিবিসি', slug: 'cbc' } }],
+  oldestVerifiedLabs: [{ id: 1, name: 'Sample Lab 1', slug: 'sample-lab-1', oldestVerifiedAt: '2026-06-01T00:00:00.000Z', priceCount: 30, staleCount: 5 }],
+  pricesByCategory: [{ nameEn: 'Blood Tests', nameBn: 'রক্ত পরীক্ষা', slug: 'hematology', prices: 60, avgPrice: 400 }],
+  activity: [{ day: '2026-11-10', reports: 1, reviews: 2, adminActions: 3 }],
+};

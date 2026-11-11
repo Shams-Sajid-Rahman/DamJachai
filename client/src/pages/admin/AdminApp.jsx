@@ -1,17 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useLang } from '../../hooks/useLang.js';
-import { useAuth } from '../../context/AuthContext.jsx';
-import { Logo } from '../../components/Logo.jsx';
+import { usePageMeta } from '../../hooks/usePageMeta.js';
+import AdminLayout from './AdminLayout.jsx';
+import DashboardPage from './DashboardPage.jsx';
+import ImportPage from './ImportPage.jsx';
+import ModerationPage from './ModerationPage.jsx';
+import UsersPage from './UsersPage.jsx';
+import AuditPage from './AuditPage.jsx';
+import { CategoriesAdmin, LabsAdmin, LocationsAdmin, PricesAdmin, TestsAdmin } from './resources.jsx';
+import NotFoundPage from '../NotFoundPage.jsx';
 
-// Placeholder for the admin panel, which is built in Phase 8.
+/** The admin panel. The router only mounts it for admins (RequireAdmin), and every API call is also checked on the server. */
 export default function AdminApp() {
   const { t } = useLang();
-  const { user } = useAuth();
+  usePageMeta({ title: t('admin.title') });
+
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16">
-      <Link to="/"><Logo /></Link>
-      <h1 className="mt-8 text-3xl font-bold text-navy">{t('admin.title')}</h1>
-      <p className="mt-2 text-slate-600">{t('admin.welcome', { name: user?.name })}</p>
-    </main>
+    <Routes>
+      <Route element={<AdminLayout />}>
+        <Route index element={<DashboardPage />} />
+        <Route path="labs" element={<LabsAdmin />} />
+        <Route path="tests" element={<TestsAdmin />} />
+        <Route path="categories" element={<CategoriesAdmin />} />
+        <Route path="locations" element={<LocationsAdmin />} />
+        <Route path="prices" element={<PricesAdmin />} />
+        <Route path="import" element={<ImportPage />} />
+        <Route path="price-reports" element={<ModerationPage key="price-reports" kind="price-reports" />} />
+        <Route path="reviews" element={<ModerationPage key="reviews" kind="reviews" />} />
+        <Route path="users" element={<UsersPage />} />
+        <Route path="audit" element={<AuditPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }

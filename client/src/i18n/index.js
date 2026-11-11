@@ -6,12 +6,21 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // They are merged into a single "translation" namespace, so keys look like t('nav.tests').
 const modules = import.meta.glob('../locales/*/*.json', { eager: true, import: 'default' });
 
+/** Deep merge, so two files can add keys to the same section (e.g. "admin"). */
+function merge(target, source) {
+  for (const [key, value] of Object.entries(source)) {
+    if (value && typeof value === 'object' && !Array.isArray(value)) target[key] = merge(target[key] ?? {}, value);
+    else target[key] = value;
+  }
+  return target;
+}
+
 function buildResources() {
   const resources = {};
   for (const [path, content] of Object.entries(modules)) {
     const lang = path.split('/').at(-2);
     resources[lang] ??= { translation: {} };
-    Object.assign(resources[lang].translation, content);
+    merge(resources[lang].translation, content);
   }
   return resources;
 }
