@@ -32,8 +32,8 @@
     "previous": "Previous page",
     "next": "Next page",
     "showing": "Showing {{from}}–{{to}} of {{total}}",
-    "results_one": "{{count}} result",
-    "results_other": "{{count}} results",
+    "results_one": "{{n}} result",
+    "results_other": "{{n}} results",
     "sampleData": "Sample data",
     "optional": "optional",
     "viewAll": "View all"
@@ -78,10 +78,10 @@
     "staleWarning": "This price is more than 90 days old. Please confirm with the lab.",
     "save": "Save {{amount}}",
     "cheapest": "Cheapest",
-    "hours_one": "{{count}} hour",
-    "hours_other": "{{count}} hours",
-    "days_one": "{{count}} day",
-    "days_other": "{{count}} days"
+    "hours_one": "{{n}} hour",
+    "hours_other": "{{n}} hours",
+    "days_one": "{{n}} day",
+    "days_other": "{{n}} days"
   },
   "rating": {
     "label": "Rated {{value}} out of 5",

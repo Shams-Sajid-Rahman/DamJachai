@@ -14,8 +14,9 @@ import { Icon } from './icons.jsx';
  * - Typing shows up to 6 matching tests (Bangla, English or alias).
  * - Arrow keys move through suggestions, Enter opens one, Escape closes the list.
  * - Submitting without a selection goes to /tests?q=...
+ * - With `onSelect`, picking a suggestion calls onSelect(test) instead of navigating (used as a test picker).
  */
-export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, placeholder, onSearch, className, dark = false }) {
+export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, placeholder, onSearch, onSelect, buttonLabel, className, dark = false }) {
   const { t, lang } = useLang();
   const navigate = useNavigate();
   const listId = useId();
@@ -42,9 +43,24 @@ export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, p
     navigate(path);
   }
 
+  function pick(test) {
+    if (onSelect) {
+      onSelect(test);
+      setValue('');
+      setOpen(false);
+      setActive(-1);
+      return undefined;
+    }
+    return go(`/tests/${test.slug}`);
+  }
+
   function submit(e) {
     e.preventDefault();
-    if (active >= 0 && suggestions[active]) return go(`/tests/${suggestions[active].slug}`);
+    if (active >= 0 && suggestions[active]) return pick(suggestions[active]);
+    if (onSelect) {
+      if (suggestions[0]) pick(suggestions[0]);
+      return undefined;
+    }
     const query = value.trim();
     if (onSearch) {
       setOpen(false);
@@ -115,7 +131,7 @@ export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, p
             large ? 'h-12 px-6 text-base' : 'h-9 px-4 text-sm',
           )}
         >
-          {t('search.button')}
+          {buttonLabel || t('search.button')}
         </button>
       </form>
 
@@ -137,7 +153,7 @@ export function SearchBar({ size = 'md', defaultValue = '', autoFocus = false, p
               role="option"
               aria-selected={i === active}
               onMouseDown={(e) => e.preventDefault()}
-              onClick={() => go(`/tests/${test.slug}`)}
+              onClick={() => pick(test)}
               onMouseEnter={() => setActive(i)}
               className={cn('flex cursor-pointer items-center justify-between gap-3 px-4 py-2.5', i === active && 'bg-mint')}
             >

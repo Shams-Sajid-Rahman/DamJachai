@@ -32,8 +32,8 @@
     "previous": "আগের পৃষ্ঠা",
     "next": "পরের পৃষ্ঠা",
     "showing": "{{total}}টির মধ্যে {{from}}–{{to}} দেখানো হচ্ছে",
-    "results_one": "{{count}}টি ফলাফল",
-    "results_other": "{{count}}টি ফলাফল",
+    "results_one": "{{n}}টি ফলাফল",
+    "results_other": "{{n}}টি ফলাফল",
     "sampleData": "নমুনা তথ্য",
     "optional": "ঐচ্ছিক",
     "viewAll": "সব দেখুন"
@@ -78,10 +78,10 @@
     "staleWarning": "এই দাম ৯০ দিনের বেশি পুরোনো। ল্যাবের সাথে নিশ্চিত করুন।",
     "save": "{{amount}} সাশ্রয়",
     "cheapest": "সবচেয়ে কম দাম",
-    "hours_one": "{{count}} ঘণ্টা",
-    "hours_other": "{{count}} ঘণ্টা",
-    "days_one": "{{count}} দিন",
-    "days_other": "{{count}} দিন"
+    "hours_one": "{{n}} ঘণ্টা",
+    "hours_other": "{{n}} ঘণ্টা",
+    "days_one": "{{n}} দিন",
+    "days_other": "{{n}} দিন"
   },
   "rating": {
     "label": "৫-এর মধ্যে {{value}} রেটিং",
