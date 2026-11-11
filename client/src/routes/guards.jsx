@@ -35,12 +35,13 @@ export function RequireAdmin({ children }) {
 
 /** Login and register pages: a logged-in user is sent back to where they came from. */
 export function GuestOnly({ children }) {
-  const { status } = useAuth();
+  const { status, isAdmin } = useAuth();
   const location = useLocation();
 
   if (status === 'loading') return <FullPageLoader />;
   if (status === 'authenticated') {
-    return <Navigate to={location.state?.from?.pathname || '/'} replace />;
+    // Admins land on the admin panel unless they were heading somewhere specific.
+    return <Navigate to={location.state?.from?.pathname || (isAdmin ? '/admin' : '/')} replace />;
   }
   return children ?? <Outlet />;
 }
