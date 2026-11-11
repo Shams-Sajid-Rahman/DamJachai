@@ -107,7 +107,7 @@ export function Navbar({ dark = false }) {
         {t('nav.skipToContent')}
       </a>
       <nav aria-label={t('nav.main')} className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-        <Link to="/" aria-label={t('nav.home')} className="shrink-0">
+        <Link to="/" className="shrink-0" title={t('nav.home')}>
           <Logo variant={dark ? 'light' : 'dark'} />
         </Link>
 

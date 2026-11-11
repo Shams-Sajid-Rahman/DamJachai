@@ -3,10 +3,10 @@ import { Icon } from '../icons.jsx';
 
 const VARIANTS = {
   teal: 'bg-primary/10 text-primary-dark ring-primary/20',
-  coral: 'bg-coral-light text-coral-dark ring-coral/30',
+  coral: 'bg-coral-light text-coral-ink ring-coral/30',
   navy: 'bg-navy text-white ring-navy',
   slate: 'bg-slate-100 text-slate-700 ring-slate-200',
-  amber: 'bg-amber-50 text-amber-800 ring-amber-200',
+  amber: 'bg-amber-50 text-amber-900 ring-amber-200',
   green: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
   red: 'bg-red-50 text-red-700 ring-red-200',
   white: 'bg-white/15 text-white ring-white/25',

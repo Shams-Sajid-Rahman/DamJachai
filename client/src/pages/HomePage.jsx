@@ -1,17 +1,50 @@
+import { domAnimation, LazyMotion, MotionConfig } from 'framer-motion';
 import { useLang } from '../hooks/useLang.js';
 import { usePageMeta } from '../hooks/usePageMeta.js';
-import { SearchBar } from '../components/SearchBar.jsx';
+import { usePopularTests, useStats } from '../hooks/queries.js';
+import { useStoryScroll } from './landing/useStoryScroll.js';
+import { StoryBackdrop } from './landing/StoryBackdrop.jsx';
+import {
+  CtaSection,
+  HeroSection,
+  PopularTestsSection,
+  PriceGapSection,
+  StatsSection,
+  StepsSection,
+  TrustSection,
+} from './landing/sections.jsx';
 
-// Temporary home page. It is replaced by the 3D landing page in Phase 6.
+/**
+ * Landing page.
+ * The first three sections are the "scroll story". A sticky 3D canvas (or the 2D fallback) sits behind them,
+ * and its camera moves as the user scrolls. All text is plain HTML, so it shows first and search engines can read it.
+ */
 export default function HomePage() {
   const { t } = useLang();
-  usePageMeta({});
+  usePageMeta({ title: t('landing.meta.title'), description: t('landing.meta.description') });
+
+  const popular = usePopularTests(8);
+  const stats = useStats();
+  const { wrapperRef, progressRef, pointerRef } = useStoryScroll();
+
   return (
-    <section className="-mt-16 flex min-h-[70vh] items-center bg-navy px-4 pt-16">
-      <div className="mx-auto w-full max-w-2xl py-20 text-center">
-        <h1 className="text-3xl font-bold text-white sm:text-5xl">{t('app.tagline')}</h1>
-        <SearchBar size="lg" className="mt-8" dark />
-      </div>
-    </section>
+    <LazyMotion features={domAnimation} strict>
+      <MotionConfig reducedMotion="user">
+        <div ref={wrapperRef} className="relative -mt-16 bg-navy">
+          <div className="sticky top-0 h-dvh w-full overflow-hidden" aria-hidden="true">
+            <StoryBackdrop wrapperRef={wrapperRef} progressRef={progressRef} pointerRef={pointerRef} />
+          </div>
+          <div className="relative -mt-[100dvh]">
+            <HeroSection popular={popular.data} />
+            <PriceGapSection popular={popular.data} loading={popular.isPending} />
+            <StepsSection />
+          </div>
+        </div>
+        <PopularTestsSection popular={popular.data} loading={popular.isPending} />
+        <StatsSection stats={stats.data} />
+        <TrustSection stats={stats.data} />
+        <CtaSection />
+      </MotionConfig>
+    </LazyMotion>
   );
 }

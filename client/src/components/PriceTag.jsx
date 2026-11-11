@@ -13,7 +13,7 @@ export function PriceTag({ price, discountedPrice, size = 'md', highlight = fals
   return (
     <span className={cn('inline-flex flex-wrap items-baseline gap-x-2', className)}>
       {prefix && <span className="text-sm font-medium text-slate-500">{prefix}</span>}
-      <span className={cn('font-bold tabular-nums', SIZES[size], highlight ? 'text-coral' : 'text-navy')}>
+      <span className={cn('font-bold tabular-nums', SIZES[size], highlight ? 'text-coral-ink' : 'text-navy')}>
         {formatPrice(effective, lang)}
       </span>
       {hasDiscount && (

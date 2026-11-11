@@ -25,6 +25,8 @@ export default {
           DEFAULT: '#FF6B57',
           light: '#FFE3DE',
           dark: '#E5503C',
+          // coral text on white or light backgrounds (contrast 4.5:1 or better); bright coral is for fills and dark backgrounds
+          ink: '#B23A26',
         },
       },
       fontFamily: {
@@ -34,6 +36,7 @@ export default {
       },
       keyframes: {
         'toast-in': { from: { opacity: 0, transform: 'translateY(8px) scale(0.98)' }, to: { opacity: 1, transform: 'none' } },
+        float: { '0%, 100%': { transform: 'translate3d(0, 0, 0)' }, '50%': { transform: 'translate3d(0, -24px, 0)' } },
         'fade-up': { from: { opacity: 0, transform: 'translateY(16px)' }, to: { opacity: 1, transform: 'none' } },
       },
       animation: {
