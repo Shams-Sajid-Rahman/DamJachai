@@ -49,3 +49,6 @@ if (typeof HTMLDialogElement !== 'undefined' && !HTMLDialogElement.prototype.sho
 }
 
 window.scrollTo = () => {};
+
+// jsdom has no canvas. Returning null makes the landing page behave like a device without WebGL.
+HTMLCanvasElement.prototype.getContext = () => null;
