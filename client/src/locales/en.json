@@ -6,10 +6,63 @@
   "language": {
     "switchTo": "বাংলা"
   },
+  "common": {
+    "loading": "Loading..."
+  },
   "status": {
     "checking": "Checking API...",
     "ok": "API is running",
     "down": "API is not reachable"
+  },
+  "nav": {
+    "hello": "Hello, {{name}}",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "admin": "Admin"
+  },
+  "auth": {
+    "loginTitle": "Log in",
+    "loginSubtitle": "Welcome back. Log in to report prices and write reviews.",
+    "registerTitle": "Create an account",
+    "registerSubtitle": "It's free. You need an account to report prices and review labs.",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "passwordHint": "At least 8 characters, with a letter and a number.",
+    "loginButton": "Log in",
+    "registerButton": "Create account",
+    "noAccount": "New to DamJachai?",
+    "registerLink": "Create an account",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in"
+  },
+  "validation": {
+    "nameMin": "Name must be at least 2 characters.",
+    "email": "Enter a valid email address.",
+    "passwordMin": "Password must be at least 8 characters.",
+    "passwordMix": "Password must contain a letter and a number.",
+    "passwordMatch": "Passwords do not match."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Cannot reach the server. Check your connection.",
+    "timeout": "The request timed out. Please try again.",
+    "rateLimited": "Too many attempts. Please wait a few minutes and try again.",
+    "forbidden": "You do not have permission to do this.",
+    "notFound": "Not found.",
+    "codes": {
+      "INVALID_CREDENTIALS": "Invalid email or password.",
+      "VALIDATION_ERROR": "Please fix the highlighted fields.",
+      "ACCOUNT_INACTIVE": "Your account is deactivated.",
+      "NO_TOKEN": "Please log in to continue.",
+      "RATE_LIMITED": "Too many attempts. Please wait a few minutes and try again."
+    }
+  },
+  "admin": {
+    "title": "Admin panel",
+    "welcome": "Welcome, {{name}}."
   },
   "notFound": {
     "message": "This page does not exist.",

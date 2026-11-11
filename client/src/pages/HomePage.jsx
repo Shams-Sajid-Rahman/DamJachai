@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { Logo } from '../components/Logo.jsx';
 import { LanguageToggle } from '../components/LanguageToggle.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 import { fetchHealth } from '../lib/healthApi.js';
 
-// Phase 0 placeholder: proves that routing, i18n, Tailwind and the API connection work.
+// Temporary home page. It is replaced by the 3D landing page in Phase 6.
 export default function HomePage() {
   const { t } = useTranslation();
+  const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const { data, isPending, isError } = useQuery({ queryKey: ['health'], queryFn: fetchHealth });
 
   let statusText = t('status.checking');
@@ -27,6 +30,26 @@ export default function HomePage() {
         <span className={`h-2.5 w-2.5 rounded-full ${dotColor}`} aria-hidden="true" />
         {statusText}
       </p>
+      <div className="flex flex-wrap items-center justify-center gap-3 text-white">
+        {isAuthenticated ? (
+          <>
+            <span>{t('nav.hello', { name: user.name })}</span>
+            {isAdmin && (
+              <Link to="/admin" className="underline underline-offset-4">
+                {t('nav.admin')}
+              </Link>
+            )}
+            <button type="button" onClick={logout} className="underline underline-offset-4">
+              {t('nav.logout')}
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="underline underline-offset-4">{t('nav.login')}</Link>
+            <Link to="/register" className="underline underline-offset-4">{t('nav.register')}</Link>
+          </>
+        )}
+      </div>
       <LanguageToggle className="border-white/30 text-white hover:bg-white/10" />
     </main>
   );
