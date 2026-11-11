@@ -7,7 +7,7 @@ export function AuthCard({ title, subtitle, children, footer }) {
     <div className="flex min-h-[calc(100dvh-4rem)] items-center justify-center px-4 py-10">
       <div className="w-full max-w-md">
         <div className="mb-6 flex justify-center">
-          <Link to="/" aria-label="DamJachai home">
+          <Link to="/">
             <Logo />
           </Link>
         </div>
