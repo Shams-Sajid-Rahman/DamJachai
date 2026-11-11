@@ -79,7 +79,7 @@ export default function TestsPage() {
   const chip = (active) =>
     cn(
       'whitespace-nowrap rounded-full border px-3.5 py-1.5 text-sm font-medium transition',
-      active ? 'border-primary bg-primary text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-primary hover:text-primary-dark',
+      active ? 'border-primary-dark bg-primary-dark text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-primary hover:text-primary-dark',
     );
 
   return (
@@ -101,7 +101,7 @@ export default function TestsPage() {
               onClick={() => setFilters({ category: c.slug })}
               aria-pressed={filters.category === c.slug}
             >
-              {localName(c, lang)} <span className="opacity-70">({formatNumber(c.testCount, lang)})</span>
+              {localName(c, lang)} <span>({formatNumber(c.testCount, lang)})</span>
             </button>
           ))}
         </div>

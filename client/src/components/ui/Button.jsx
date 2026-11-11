@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '../../lib/cn.js';
 
 const VARIANTS = {
-  primary: 'bg-primary text-white hover:bg-primary-dark shadow-sm',
+  primary: 'bg-primary-dark text-white hover:bg-[#115E59] shadow-sm',
   coral: 'bg-coral text-navy hover:bg-[#ff8270] shadow-sm',
   navy: 'bg-navy text-white hover:bg-navy-light shadow-sm',
   secondary: 'bg-white text-navy border border-slate-300 hover:border-primary hover:text-primary-dark',

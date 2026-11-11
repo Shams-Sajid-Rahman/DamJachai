@@ -164,7 +164,7 @@ export default function ImportPage() {
                 key: 'price', header: t('compare.price'),
                 render: (r) => (
                   <span className="whitespace-nowrap tabular-nums">
-                    {r.oldPrice != null && r.action === 'update' && <span className="mr-1 text-slate-400 line-through">{formatPrice(r.oldPrice, lang)}</span>}
+                    {r.oldPrice != null && r.action === 'update' && <span className="mr-1 text-slate-500 line-through">{formatPrice(r.oldPrice, lang)}</span>}
                     {typeof r.price === 'number' ? formatPrice(r.price, lang) : String(r.price ?? '')}
                   </span>
                 ),

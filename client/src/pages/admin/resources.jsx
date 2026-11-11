@@ -328,7 +328,7 @@ export function PricesAdmin() {
           render: (r) => (
             <span className="whitespace-nowrap font-semibold tabular-nums text-navy">
               {formatPrice(r.discountedPrice ?? r.price, lang)}
-              {r.discountedPrice != null && <span className="ml-1 text-xs font-normal text-slate-400 line-through">{formatPrice(r.price, lang)}</span>}
+              {r.discountedPrice != null && <span className="ml-1 text-xs font-normal text-slate-500 line-through">{formatPrice(r.price, lang)}</span>}
             </span>
           ),
         },

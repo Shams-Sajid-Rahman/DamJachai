@@ -44,7 +44,7 @@ export function Pagination({ page, totalPages, onChange, className }) {
             type="button"
             onClick={() => onChange(p)}
             aria-current={p === page ? 'page' : undefined}
-            className={cn(btn, p === page ? 'bg-primary text-white shadow-sm' : 'text-slate-700 hover:bg-white')}
+            className={cn(btn, p === page ? 'bg-primary-dark text-white shadow-sm' : 'text-slate-700 hover:bg-white')}
           >
             {formatNumber(p, lang)}
           </button>

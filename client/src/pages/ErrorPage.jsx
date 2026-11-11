@@ -16,7 +16,7 @@ export default function ErrorPage() {
       <h1 className="text-2xl font-bold text-navy">{is404 ? t('notFound.message') : t('errors.pageCrashed')}</h1>
       <p className="max-w-md text-slate-600">{t('errors.pageCrashedHint')}</p>
       <div className="flex gap-3">
-        <button type="button" onClick={() => window.location.reload()} className="rounded-xl bg-primary px-4 py-2 font-semibold text-white">
+        <button type="button" onClick={() => window.location.reload()} className="rounded-xl bg-primary-dark px-4 py-2 font-semibold text-white">
           {t('common.reload')}
         </button>
         <Link to="/" className="rounded-xl border border-slate-300 bg-white px-4 py-2 font-semibold text-navy">

@@ -35,12 +35,12 @@ function mapUrl(lab) {
 
 function InfoRow({ icon, label, children }) {
   return (
-    <div className="flex gap-3">
-      <Icon name={icon} className="mt-0.5 h-5 w-5 shrink-0 text-primary-dark" />
-      <div className="min-w-0">
-        <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt>
-        <dd className="text-slate-700">{children}</dd>
-      </div>
+    <div className="min-w-0">
+      <dt className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
+        <Icon name={icon} className="h-5 w-5 shrink-0 text-primary-dark" />
+        {label}
+      </dt>
+      <dd className="pl-7 text-slate-700">{children}</dd>
     </div>
   );
 }
@@ -155,7 +155,7 @@ function ReviewForm({ lab }) {
           {['yes', 'no'].map((v) => (
             <label key={v} className="cursor-pointer">
               <input type="radio" name="onTime" value={v} checked={onTime === v} onChange={() => setOnTime(v)} className="peer sr-only" />
-              <span className="inline-flex rounded-full border border-slate-300 px-4 py-1.5 text-sm peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
+              <span className="inline-flex rounded-full border border-slate-300 px-4 py-1.5 text-sm peer-checked:border-primary-dark peer-checked:bg-primary-dark peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
                 {t(`common.${v}`)}
               </span>
             </label>
