@@ -91,13 +91,34 @@
     "stars_other": "{{count}} stars"
   },
   "pages": {
-    "tests": { "title": "All tests", "subtitle": "Search and browse diagnostic tests." },
-    "compare": { "title": "Compare prices", "subtitle": "See every lab that offers this test." },
-    "labs": { "title": "Diagnostic labs", "subtitle": "Browse labs in your city." },
-    "lab": { "title": "Lab details", "subtitle": "" },
-    "basket": { "title": "Test basket", "subtitle": "Add several tests and find the lab with the lowest total." },
-    "favorites": { "title": "Favorite labs", "subtitle": "Labs you have saved." },
-    "reportPrice": { "title": "Report a price", "subtitle": "Paid a different price? Tell us, and an admin will check it." }
+    "tests": {
+      "title": "All tests",
+      "subtitle": "Search and browse diagnostic tests."
+    },
+    "compare": {
+      "title": "Compare prices",
+      "subtitle": "See every lab that offers this test."
+    },
+    "labs": {
+      "title": "Diagnostic labs",
+      "subtitle": "Browse labs in your city."
+    },
+    "lab": {
+      "title": "Lab details",
+      "subtitle": ""
+    },
+    "basket": {
+      "title": "Test basket",
+      "subtitle": "Add several tests and find the lab with the lowest total."
+    },
+    "favorites": {
+      "title": "Favorite labs",
+      "subtitle": "Labs you have saved."
+    },
+    "reportPrice": {
+      "title": "Report a price",
+      "subtitle": "Paid a different price? Tell us, and an admin will check it."
+    }
   },
   "validation": {
     "required": "This field is required.",
@@ -130,10 +151,6 @@
     "checking": "Checking API...",
     "ok": "API is running",
     "down": "API is not reachable"
-  },
-  "admin": {
-    "title": "Admin panel",
-    "welcome": "Welcome, {{name}}."
   },
   "notFound": {
     "message": "This page does not exist.",
