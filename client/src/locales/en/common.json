@@ -1,0 +1,143 @@
+{
+  "app": {
+    "name": "DamJachai",
+    "tagline": "Check the price"
+  },
+  "language": {
+    "switchTo": "বাংলা",
+    "switchLabel": "Switch language to Bangla"
+  },
+  "common": {
+    "loading": "Loading...",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "saving": "Saving...",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "clear": "Clear",
+    "all": "All",
+    "yes": "Yes",
+    "no": "No",
+    "reload": "Reload page",
+    "retry": "Try again",
+    "back": "Back",
+    "noResults": "No results found",
+    "pagination": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "showing": "Showing {{from}}–{{to}} of {{total}}",
+    "results_one": "{{count}} result",
+    "results_other": "{{count}} results",
+    "sampleData": "Sample data",
+    "optional": "optional",
+    "viewAll": "View all"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "home": "DamJachai home",
+    "skipToContent": "Skip to content",
+    "tests": "Tests",
+    "labs": "Labs",
+    "basket": "Basket",
+    "favorites": "Favorite labs",
+    "reportPrice": "Report a price",
+    "hello": "Hello, {{name}}",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "admin": "Admin panel",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "about": "DamJachai helps you compare diagnostic test prices across labs in your city, so you can check before you pay.",
+    "explore": "Explore",
+    "important": "Please note",
+    "disclaimer": "Prices can change. Always confirm the price with the lab before your test.",
+    "sampleData": "All labs, prices and reviews shown right now are sample data for demonstration. They are not real.",
+    "noMedicalAdvice": "DamJachai does not give medical advice. Ask your doctor which test you need."
+  },
+  "search": {
+    "label": "Search for a test",
+    "placeholder": "Search a test, e.g. CBC, ডেঙ্গু NS1, HbA1c",
+    "button": "Search",
+    "suggestions": "Test suggestions",
+    "noSuggestions": "No test matches \"{{q}}\""
+  },
+  "price": {
+    "from": "from {{price}}",
+    "original": "Original price {{price}}",
+    "lastVerified": "Last verified",
+    "verifiedAgo": "Verified {{when}}",
+    "staleWarning": "This price is more than 90 days old. Please confirm with the lab.",
+    "save": "Save {{amount}}",
+    "cheapest": "Cheapest",
+    "hours_one": "{{count}} hour",
+    "hours_other": "{{count}} hours",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days"
+  },
+  "rating": {
+    "label": "Rated {{value}} out of 5",
+    "none": "No ratings yet",
+    "choose": "Choose a rating",
+    "stars_one": "{{count}} star",
+    "stars_other": "{{count}} stars"
+  },
+  "pages": {
+    "tests": { "title": "All tests", "subtitle": "Search and browse diagnostic tests." },
+    "compare": { "title": "Compare prices", "subtitle": "See every lab that offers this test." },
+    "labs": { "title": "Diagnostic labs", "subtitle": "Browse labs in your city." },
+    "lab": { "title": "Lab details", "subtitle": "" },
+    "basket": { "title": "Test basket", "subtitle": "Add several tests and find the lab with the lowest total." },
+    "favorites": { "title": "Favorite labs", "subtitle": "Labs you have saved." },
+    "reportPrice": { "title": "Report a price", "subtitle": "Paid a different price? Tell us, and an admin will check it." }
+  },
+  "validation": {
+    "required": "This field is required.",
+    "nameMin": "Name must be at least 2 characters.",
+    "email": "Enter a valid email address.",
+    "passwordMin": "Password must be at least 8 characters.",
+    "passwordMix": "Password must contain a letter and a number.",
+    "passwordMatch": "Passwords do not match.",
+    "positivePrice": "Enter a price greater than 0."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Cannot reach the server. Check your connection.",
+    "timeout": "The request timed out. Please try again.",
+    "rateLimited": "Too many attempts. Please wait a few minutes and try again.",
+    "forbidden": "You do not have permission to do this.",
+    "notFound": "Not found.",
+    "pageCrashed": "Something went wrong on this page.",
+    "pageCrashedHint": "Please reload the page. If it keeps happening, try again later.",
+    "loadFailed": "Could not load this data.",
+    "codes": {
+      "INVALID_CREDENTIALS": "Invalid email or password.",
+      "VALIDATION_ERROR": "Please fix the highlighted fields.",
+      "ACCOUNT_INACTIVE": "Your account is deactivated.",
+      "NO_TOKEN": "Please log in to continue.",
+      "RATE_LIMITED": "Too many attempts. Please wait a few minutes and try again."
+    }
+  },
+  "status": {
+    "checking": "Checking API...",
+    "ok": "API is running",
+    "down": "API is not reachable"
+  },
+  "admin": {
+    "title": "Admin panel",
+    "welcome": "Welcome, {{name}}."
+  },
+  "notFound": {
+    "message": "This page does not exist.",
+    "hint": "The link may be broken, or the page may have moved. Try searching for a test.",
+    "home": "Go to home"
+  }
+}

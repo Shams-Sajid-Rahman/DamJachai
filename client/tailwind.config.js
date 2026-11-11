@@ -32,6 +32,14 @@ export default {
         sans: ['Inter', '"Hind Siliguri"', ...defaultTheme.fontFamily.sans],
         bangla: ['"Hind Siliguri"', 'Inter', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        'toast-in': { from: { opacity: 0, transform: 'translateY(8px) scale(0.98)' }, to: { opacity: 1, transform: 'none' } },
+        'fade-up': { from: { opacity: 0, transform: 'translateY(16px)' }, to: { opacity: 1, transform: 'none' } },
+      },
+      animation: {
+        'toast-in': 'toast-in 180ms ease-out',
+        'fade-up': 'fade-up 600ms ease-out both',
+      },
       boxShadow: {
         card: '0 1px 3px rgba(11, 31, 58, 0.06), 0 8px 24px rgba(11, 31, 58, 0.06)',
       },
