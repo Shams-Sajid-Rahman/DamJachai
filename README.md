@@ -78,6 +78,56 @@ npm run dev
 | `npm run dev:client` | Web app only |
 | `npm run build`      | Production build of the client into `client/dist` |
 | `npm start`          | Starts the API without the file watcher |
+| `npm run db:create`  | Creates the database named in `DATABASE_URL` if it does not exist |
+| `npm run migrate`    | Applies new SQL migrations from `server/src/db/migrations` |
+| `npm run seed`       | **Empties all tables**, then loads fake sample data and the admin user |
+| `npm run db:reset`   | Dev only: drops everything, migrates, then seeds |
+
+## Database
+
+First-time setup:
+
+```bash
+npm run db:create   # once
+npm run migrate
+npm run seed
+```
+
+- **Migrations** are plain, numbered SQL files (`001_*.sql`, `002_*.sql`, ...). The runner applies each file in its own
+  transaction and records it in `schema_migrations` with a checksum. **Never edit an applied migration.** Add a new
+  numbered file instead.
+- **Seed data is fake.** Labs are named "Sample Lab 1" to "Sample Lab 12" and flagged `is_sample = true`. Phone numbers
+  use the unused `010` prefix, websites use `example.com`, and reviews start with "[Sample]" or "[নমুনা]". Prices are
+  generated from made-up ranges with a fixed random seed, so every run gives the same data.
+- **Admin user** is created from `ADMIN_NAME`, `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `server/.env`. Six sample users
+  are also created with random passwords, so nobody can log in as them.
+- **Search** uses the `pg_trgm` extension. Trigram GIN indexes on test names (English and Bangla) and aliases support
+  `ILIKE '%q%'` and typo-tolerant `similarity()` matching.
+- **Deleting:** labs and tests that have prices cannot be hard deleted (`ON DELETE RESTRICT`). Hide them with
+  `status = 'hidden'` instead.
+
+Seeded content: 2 cities, 8 areas, 8 categories, 40 tests (182 aliases), 12 sample labs, about 390 lab prices with
+price history, about 26 approved and 4 pending reviews, 3 pending price reports, 1 admin and 6 sample users.
+
+Example queries are in [docs/sample-queries.sql](docs/sample-queries.sql):
+
+```bash
+psql "postgres://USER:PASSWORD@localhost:5432/damjachai" -f docs/sample-queries.sql
+```
+
+### Tables
+
+| Table | Purpose |
+|-------|---------|
+| `users`, `refresh_tokens` | Accounts (`user` or `admin`) and hashed refresh tokens |
+| `cities`, `areas` | Locations, in Bangla and English |
+| `labs` | Diagnostic labs: address, map position, hours, accreditation, home collection |
+| `test_categories`, `tests`, `test_aliases` | Test catalog. Aliases make "CBC", "complete blood count" and "সিবিসি" find the same test |
+| `lab_tests` | The price of a test at a lab (unique per lab and test), with discount, report hours, last verified date and source |
+| `price_history` | Every price change for each lab and test pair |
+| `reviews`, `price_reports` | User content, moderated by admins (`pending`, `approved` or `rejected`) |
+| `favorites` | Labs a user has saved |
+| `audit_logs` | Every admin write action |
 
 ### Environment variables
 
@@ -90,6 +140,9 @@ npm run dev
 | `JWT_ACCESS_SECRET`  | long random string | used from Phase 2 |
 | `JWT_REFRESH_SECRET` | long random string | used from Phase 2 |
 | `CLIENT_URL`         | `http://localhost:5173` | the only origin CORS allows |
+| `ADMIN_NAME`         | `Site Admin` | first admin, created by `npm run seed` |
+| `ADMIN_EMAIL`        | `admin@example.com` | first admin's login email |
+| `ADMIN_PASSWORD`     | 10+ characters | first admin's password (never hard-coded) |
 
 **client/.env**
 
