@@ -1,0 +1,18 @@
+{
+  "app": {
+    "name": "DamJachai",
+    "tagline": "Check the price"
+  },
+  "language": {
+    "switchTo": "বাংলা"
+  },
+  "status": {
+    "checking": "Checking API...",
+    "ok": "API is running",
+    "down": "API is not reachable"
+  },
+  "notFound": {
+    "message": "This page does not exist.",
+    "home": "Go to home"
+  }
+}
