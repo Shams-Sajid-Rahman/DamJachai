@@ -1,0 +1,18 @@
+{
+  "app": {
+    "name": "দাম যাচাই",
+    "tagline": "দাম যাচাই করুন"
+  },
+  "language": {
+    "switchTo": "English"
+  },
+  "status": {
+    "checking": "API যাচাই করা হচ্ছে...",
+    "ok": "API চালু আছে",
+    "down": "API-তে সংযোগ করা যাচ্ছে না"
+  },
+  "notFound": {
+    "message": "এই পাতাটি নেই।",
+    "home": "হোমে ফিরে যান"
+  }
+}
