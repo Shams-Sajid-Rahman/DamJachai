@@ -1,0 +1,66 @@
+{
+  "landing": {
+    "meta": {
+      "title": "Compare diagnostic test prices in Bangladesh",
+      "description": "Same test, different price. Compare CBC, dengue NS1, HbA1c, ultrasound, MRI and more across labs in your city before you pay."
+    },
+    "hero": {
+      "badge": "Compare lab test prices in your city",
+      "title1": "Same test.",
+      "title2": "Different price.",
+      "title3": "Check before you pay.",
+      "subtitle": "Search a test, see every lab's price, report time and rating side by side, and find the best deal near you.",
+      "popular": "Popular:",
+      "scroll": "Scroll to see how it works"
+    },
+    "gap": {
+      "eyebrow": "Why it matters",
+      "title": "The same test can cost very different amounts",
+      "text": "Two labs a few streets apart can charge very different prices for the exact same test. A quick check can save you real money.",
+      "liveExample": "Live example",
+      "acrossLabs_one": "Offered by {{n}} lab",
+      "acrossLabs_other": "Offered by {{n}} labs",
+      "cheapest": "Cheapest lab",
+      "mostExpensive": "Most expensive lab",
+      "compareCta": "Compare all labs",
+      "sampleNote": "Prices shown are sample data for demonstration."
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Search. Compare. Save.",
+      "search": { "title": "Search", "text": "Type a test name in Bangla or English, or a short name like CBC or HbA1c." },
+      "compare": { "title": "Compare", "text": "See price, report time, home collection, accreditation and rating for every lab." },
+      "save": { "title": "Save", "text": "Pick the lab that suits you, and confirm the price with the lab before you go." }
+    },
+    "popular": {
+      "title": "Popular tests",
+      "subtitle": "What people check most often.",
+      "viewAll": "All tests",
+      "from": "From",
+      "labs_one": "{{n}} lab",
+      "labs_other": "{{n}} labs",
+      "addToBasket": "Add to basket",
+      "inBasket": "In basket"
+    },
+    "stats": {
+      "title": "DamJachai in numbers",
+      "labs": "Labs listed",
+      "tests": "Tests you can compare",
+      "verified": "Prices verified in the last 90 days"
+    },
+    "trust": {
+      "title": "How prices are checked",
+      "text": "Nothing is scraped. Every price is added by an admin or comes from a user report that an admin has reviewed.",
+      "lastCheck": "Latest price check: {{date}}",
+      "admin": { "title": "Added and checked by admins", "text": "Admins enter prices from lab price lists and update them when they change." },
+      "reports": { "title": "Reports from people like you", "text": "Paid a different price? Report it. An admin reviews every report before it changes anything." },
+      "dates": { "title": "Every price shows its date", "text": "You always see when a price was last verified. Old prices are clearly marked." }
+    },
+    "cta": {
+      "title": "Ready to check your test price?",
+      "text": "Compare labs now, or help others by reporting the price you paid.",
+      "compare": "Compare now",
+      "report": "Report a price"
+    }
+  }
+}
